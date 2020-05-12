@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  background-image: url("/img/bg2.jpg");
+  background-image: url("img/bg2.jpg");
   background-position: center;
   background-size: cover;
 }
@@ -34,7 +34,9 @@ h1 {
       grid-template-columns: repeat(2, minmax(420px 1fr));
   -ms-grid-rows: auto 1fr 100px;
       grid-template-rows: auto 1fr 100px;
-      grid-template-areas: "logo  logo" "body1 body2" "foot foot";
+      grid-template-areas: "logo  logo"
+ "body1 body2"
+ "foot foot";
 }
 
 @media (max-width: 840px) {
@@ -44,7 +46,10 @@ h1 {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-        grid-template-areas: "logo" "body1" "body2" "foot";
+        grid-template-areas: "logo"
+ "body1"
+ "body2"
+ "foot";
   }
 }
 

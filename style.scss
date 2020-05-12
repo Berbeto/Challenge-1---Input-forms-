@@ -1,0 +1,258 @@
+
+
+*{
+  margin:10;
+  padding:10;
+  box-sizing: border-box;
+}
+  
+$font-color-icon:#BBBBBB;
+$font-color-type: #AFAFAF;
+
+$border-color: #C6C6C6;
+$border-button: #2A8400;
+
+$button-light: #A3D840;
+$button-dark: #7EC31F;
+
+$button-gradient-green: linear-gradient(180deg, rgba(163, 216, 64, 1), rgba(126, 195, 31, 1));
+$button-gradient-green-active: linear-gradient(180deg, rgba(126, 195, 31, 1), rgba(163, 216, 64, 1));
+
+$button-gradient-green-light: linear-gradient(180deg, rgba(205, 228, 176, 1), rgba(171, 209, 130, 1));
+$button-gradient-green-light-active: linear-gradient(180deg, rgba(171, 209, 130, 1), rgba(205, 228, 176, 1));
+
+$button-gradient-red: linear-gradient(180deg, rgba(246, 94, 112, 1), rgba(240, 55, 71, 1));
+$button-gradient-red-active: linear-gradient(180deg, rgba(240, 55, 71, 1), rgba(246, 94, 112, 1));
+  
+  
+html{
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 62.5%;
+}
+  
+body{
+  background-image: url('/img/bg2.jpg');
+  background-position: center;
+  background-size: cover;
+}
+  
+h1{
+  font-size: 3rem;
+  text-shadow: 1px 2px 0px rgba(0,0,0,.5)
+}
+
+
+// --- kontener z gridem 
+.wrap{
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  height: 100vh;
+  font-size: 2rem;
+  color: white;
+  
+  display: grid;
+  grid-template-columns: repeat(2, minmax(420px 1fr));
+  grid-template-rows: auto 1fr 100px;
+  grid-template-areas: 
+  "logo  logo"
+  "body1 body2"
+  "foot foot";
+
+  @media (max-width: 840px){
+    grid-template-columns: minmax(420px, 80%);
+    justify-content: center;
+    grid-template-areas: 
+    "logo"
+    "body1"
+    "body2"
+    "foot";
+  }
+  
+  &__logo{
+    grid-area: logo;
+    display: flex;
+    justify-content: center;
+    min-width: 420px;
+    opacity: 10%;
+    margin: 50px auto;
+  }
+
+  &__left{
+    grid-area: body1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__right{
+    grid-area: body2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__footer{
+    grid-area: foot;
+  }
+}
+  
+// --- kartta
+.card{
+  margin-top: 20px;
+  margin-bottom: 40px;
+  width: 80%;
+  border-radius: 3px;
+  padding: 10px;
+  background-color: rgba(0,0,0,.2);
+  font-size: 1.6rem;
+  color: $font-color-type;
+
+  &__inner{
+    display: flex;
+    background-color: #F4F4F4;
+    border-radius: 2px;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  &__item{
+    border: 1px solid $border-color;
+    margin: 5px 0;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 1px 1px 1px 1px (white);
+  }
+  
+  &__img{
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    border-right: 1px solid $border-color;
+  }
+
+  &__input{
+    background-color: #F4F4F4;
+    width: 100%;
+    height: 40px;
+    padding: 8px;
+    border: none;
+
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      color: $font-color-icon;
+      font-size: 1.5rem;
+    }
+  }
+ 
+  &__icon{
+    color: $font-color-icon; 
+    width: 40px;
+    padding-right: 20px;
+    margin: 0 10px 0 10px;
+    border-right: 1px solid $border-color;
+  }
+
+  &__text{
+    resize: none;
+    width: 100%;
+    height: 320px;
+    color: $font-color-type;
+    font-size: 1.3rem;
+    font-family: sans-serif;
+    box-sizing: border-box;
+  }  
+}
+  
+// --- button
+.btn{
+  width: 100%;
+  background-image: $button-gradient-green;
+  padding: 10px;
+  margin-top: 10px;
+  color: white;
+  font-size: 2.4rem;
+  border: 1px solid $border-button;
+  border-radius: 3px;
+  outline: none;
+  
+  &:active{
+    background-image: $button-gradient-green-active;
+  }
+
+  &--alert{
+    background-image: $button-gradient-red;
+    border: 1px solid #a2202a;    
+    
+    &:active{
+    background-image: $button-gradient-red-active;
+    }
+  }
+
+  &--inactive {
+    background-image: $button-gradient-green-light;
+    border: 1px solid #90ca6d;    
+    
+    &:active{
+      background-image: $button-gradient-green-light-active;
+    }
+  }
+}
+
+// --- pozycjonowanie buttona na 2 częsci
+.divide{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .btn{
+    width: 45%;
+  }
+}
+
+
+// pseudo class - check 
+.check{
+  position: relative;
+  padding: 10px;
+  
+  &__label{
+    cursor: pointer; 
+    margin-left: 10px;     
+  }
+
+  &__button{
+    height: 25px;
+    width: 25px;
+    border: 1px solid $font-color-icon;
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 3px;
+    border-radius: 4px;
+
+    &::after{
+      content: "";
+      display: block;
+      height: 1.5rem;
+      width: 1.5rem;
+      border-radius: 2px;
+      background-image:  $button-gradient-green;
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      opacity: 0; 
+      transition: opacity 100ms;
+    }
+  }
+
+  &__input{
+    opacity: 0;
+  }
+
+  &__input:checked ~ &__label &__button::after {
+    opacity: 1;
+  }
+}
+  

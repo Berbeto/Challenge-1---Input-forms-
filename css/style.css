@@ -1,0 +1,287 @@
+* {
+  margin: 10;
+  padding: 10;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  background-image: url("/img/bg2.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+h1 {
+  font-size: 3rem;
+  text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.5);
+}
+
+.wrap {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  height: 100vh;
+  font-size: 2rem;
+  color: white;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(420px 1fr))[2];
+      grid-template-columns: repeat(2, minmax(420px 1fr));
+  -ms-grid-rows: auto 1fr 100px;
+      grid-template-rows: auto 1fr 100px;
+      grid-template-areas: "logo  logo" "body1 body2" "foot foot";
+}
+
+@media (max-width: 840px) {
+  .wrap {
+    -ms-grid-columns: minmax(420px, 80%);
+        grid-template-columns: minmax(420px, 80%);
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+        grid-template-areas: "logo" "body1" "body2" "foot";
+  }
+}
+
+.wrap__logo {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: logo;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-width: 420px;
+  opacity: 10%;
+  margin: 50px auto;
+}
+
+.wrap__left {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: body1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrap__right {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: body2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrap__footer {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: foot;
+}
+
+.card {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  width: 80%;
+  border-radius: 3px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+  font-size: 1.6rem;
+  color: #AFAFAF;
+}
+
+.card__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #F4F4F4;
+  border-radius: 2px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px;
+}
+
+.card__item {
+  border: 1px solid #C6C6C6;
+  margin: 5px 0;
+  border-radius: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-shadow: 1px 1px 1px 1px white;
+          box-shadow: 1px 1px 1px 1px white;
+}
+
+.card__img {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  border-right: 1px solid #C6C6C6;
+}
+
+.card__input {
+  background-color: #F4F4F4;
+  width: 100%;
+  height: 40px;
+  padding: 8px;
+  border: none;
+}
+
+.card__input::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #BBBBBB;
+  font-size: 1.5rem;
+}
+
+.card__icon {
+  color: #BBBBBB;
+  width: 40px;
+  padding-right: 20px;
+  margin: 0 10px 0 10px;
+  border-right: 1px solid #C6C6C6;
+}
+
+.card__text {
+  resize: none;
+  width: 100%;
+  height: 320px;
+  color: #AFAFAF;
+  font-size: 1.3rem;
+  font-family: sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.btn {
+  width: 100%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#a3d840), to(#7ec31f));
+  background-image: linear-gradient(180deg, #a3d840, #7ec31f);
+  padding: 10px;
+  margin-top: 10px;
+  color: white;
+  font-size: 2.4rem;
+  border: 1px solid #2A8400;
+  border-radius: 3px;
+  outline: none;
+}
+
+.btn:active {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#7ec31f), to(#a3d840));
+  background-image: linear-gradient(180deg, #7ec31f, #a3d840);
+}
+
+.btn--alert {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f65e70), to(#f03747));
+  background-image: linear-gradient(180deg, #f65e70, #f03747);
+  border: 1px solid #a2202a;
+}
+
+.btn--alert:active {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f03747), to(#f65e70));
+  background-image: linear-gradient(180deg, #f03747, #f65e70);
+}
+
+.btn--inactive {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#cde4b0), to(#abd182));
+  background-image: linear-gradient(180deg, #cde4b0, #abd182);
+  border: 1px solid #90ca6d;
+}
+
+.btn--inactive:active {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#abd182), to(#cde4b0));
+  background-image: linear-gradient(180deg, #abd182, #cde4b0);
+}
+
+.divide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.divide .btn {
+  width: 45%;
+}
+
+.check {
+  position: relative;
+  padding: 10px;
+}
+
+.check__label {
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.check__button {
+  height: 25px;
+  width: 25px;
+  border: 1px solid #BBBBBB;
+  display: block;
+  position: absolute;
+  top: 5px;
+  left: 3px;
+  border-radius: 4px;
+}
+
+.check__button::after {
+  content: "";
+  display: block;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 2px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#a3d840), to(#7ec31f));
+  background-image: linear-gradient(180deg, #a3d840, #7ec31f);
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  opacity: 0;
+  -webkit-transition: opacity 100ms;
+  transition: opacity 100ms;
+}
+
+.check__input {
+  opacity: 0;
+}
+
+.check__input:checked ~ .check__label .check__button::after {
+  opacity: 1;
+}
+/*# sourceMappingURL=style.css.map */

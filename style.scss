@@ -33,7 +33,7 @@ html{
 body{
   background-image: url('../img/bg2.jpg');
   background-position: center;
-  background-size: cover;
+  object-fit: fill;
 }
   
 h1{
